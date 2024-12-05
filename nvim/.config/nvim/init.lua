@@ -1,13 +1,12 @@
 -- List of modules to import
 local modules = {
-	'packer-init',
+	'packer-config',
 	'treesitter-config',
 	'telescope-config',
 	'cmp-config',
 	'lsp-config',
 	'lualine-config',
 	'gitsigns-config',
-	-- 'jdlts-config',
 	'settings'
 }
 
