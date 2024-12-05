@@ -1,0 +1,21 @@
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+[diff]
+	external = difft
+	tool = difft
+[alias]
+	co = checkout
+	st = status
+	ci = commit
+[push]
+	autoSetupRemote = true
+[user]
+	email = vivich4omega@gmail.com
+	name = Vitalii Chernysh
+[core]
+	editor = nvim
+[credential]
+	helper = store

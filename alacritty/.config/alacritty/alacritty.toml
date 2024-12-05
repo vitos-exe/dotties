@@ -1,0 +1,19 @@
+[general]
+import = [
+	"~/.config/alacritty/current_theme.toml"
+]
+
+[window]
+startup_mode = "Maximized"
+option_as_alt = "Both"
+
+[font]
+size = 14 
+normal = { family = "Hack Nerd Font", style = "Regular" }
+
+[keyboard]
+bindings = [
+  { key = "Right", mods = "Alt", chars = "\u001BF" },
+  { key = "Left",  mods = "Alt", chars = "\u001BB" },
+]
+
