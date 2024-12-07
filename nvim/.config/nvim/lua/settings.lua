@@ -9,3 +9,5 @@ vim.api.nvim_set_keymap('n', '<leader>w', ':w<CR>', { noremap = true, silent = t
 
 vim.api.nvim_set_keymap('n', '<leader>q', ':bp<bar>sp<bar>bn<bar>bd<CR>', {noremap = true, silent = true})
 
+vim.opt.wrap = false
+

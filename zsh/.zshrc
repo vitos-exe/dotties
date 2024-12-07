@@ -70,7 +70,16 @@ ZSH_THEME="eastwood"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git tmux docker docker-compose python zsh-autosuggestions zsh-syntax-highlighting)
+plugins=(
+	git
+	tmux
+	docker
+	docker-compose
+	python
+	zsh-autosuggestions
+	zsh-syntax-highlighting
+	alias-finder
+)
 
 source $ZSH/oh-my-zsh.sh
 
