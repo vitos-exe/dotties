@@ -22,7 +22,7 @@ vim.api.nvim_set_keymap('n', '<leader><S-Tab>', ':bprev<CR>', { noremap = true, 
 
 
 
--- Packer {{{
+-- packer.nvim {{{
 
 local ensure_packer = function()
 	local fn = vim.fn
