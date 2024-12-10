@@ -17,5 +17,6 @@
 	name = Vitalii Chernysh
 [core]
 	editor = nvim
+	autocrlf = input
 [credential]
 	helper = store

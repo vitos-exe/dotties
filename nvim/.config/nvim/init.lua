@@ -1,5 +1,6 @@
 -- List of modules to import
 local modules = {
+	'settings',
 	'packer-config',
 	'treesitter-config',
 	'telescope-config',
@@ -7,7 +8,6 @@ local modules = {
 	'lsp-config',
 	'lualine-config',
 	'gitsigns-config',
-	'settings'
 }
 
 -- Loop through the list and require each module
