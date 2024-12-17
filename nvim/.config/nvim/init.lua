@@ -100,15 +100,24 @@ require('packer').startup(function(use)
 	}
 
 	use {
-		"windwp/nvim-autopairs",
+		'windwp/nvim-autopairs',
 		event = "InsertEnter",
 		config = function()
-			require("nvim-autopairs").setup {}
+			require('nvim-autopairs').setup {}
 		end
 	}
 
 	use {
 		'Mofiqul/vscode.nvim'
+	}
+
+	use {
+		'RishabhRD/nvim-lsputils',
+		requires = { 'RishabhRD/popfix' },
+        }
+
+	use {
+		'rebelot/kanagawa.nvim'
 	}
 
 	-- Automatically set up your configuration after cloning packer.nvim
@@ -134,10 +143,15 @@ require 'nvim-treesitter.configs'.setup {
 
 -- telescope.nvim {{{
 
-vim.api.nvim_set_keymap('n', '<leader>ff', [[<cmd>Telescope find_files<CR>]], { noremap = true, silent = true })
-vim.api.nvim_set_keymap('n', '<leader>fg', [[<cmd>Telescope live_grep<CR>]], { noremap = true, silent = true })
-vim.api.nvim_set_keymap('n', '<leader>fb', [[<cmd>Telescope buffers<CR>]], { noremap = true, silent = true })
-vim.api.nvim_set_keymap('n', '<leader>fh', [[<cmd>Telescope help_tags<CR>]], { noremap = true, silent = true })
+local builtin = require('telescope.builtin')
+vim.keymap.set('n', '<leader>ff', builtin.find_files, { desc = 'Telescope find files' })
+vim.keymap.set('n', '<leader>fg', builtin.live_grep, { desc = 'Telescope live grep' })
+vim.keymap.set('n', '<leader>fb', builtin.buffers, { desc = 'Telescope buffers' })
+vim.keymap.set('n', '<leader>fm', builtin.marks, { desc = 'Telescope find marks' })
+vim.keymap.set('n', '<leader>fp', builtin.planets, { desc = 'Telescope list planets' })
+vim.keymap.set('n', '<leader>fk', builtin.keymaps, { desc = 'Telescope list keymaps' })
+vim.keymap.set('n', '<leader>fc', builtin.git_commits, { desc = 'Telescope find git commits' })
+vim.keymap.set('n', '<leader>d',  builtin.diagnostics, { desc = 'Telescope diagnostics' })
 
 -- }}}
 
@@ -211,7 +225,25 @@ vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, {
 -- Set a black border color for the hover window
 vim.api.nvim_set_hl(0, 'FloatBorder', { fg = '#000000', bg = 'None' }) -- Black border
 
+local lsputils = {
+    code_action = require'lsputil.codeAction'.code_action_handler,
+    references = require'lsputil.locations'.references_handler,
+    definition = require'lsputil.locations'.definition_handler,
+    declaration = require'lsputil.locations'.declaration_handler,
+    typeDefinition = require'lsputil.locations'.typeDefinition_handler,
+    implementation = require'lsputil.locations'.implementation_handler,
+    document_symbol = require'lsputil.symbols'.document_handler,
+    workspace_symbol = require'lsputil.symbols'.workspace_handler,
+}
 
+vim.lsp.handlers["textDocument/codeAction"] = lsputils.code_action
+vim.lsp.handlers["textDocument/references"] = lsputils.references
+vim.lsp.handlers["textDocument/definition"] = lsputils.definition
+vim.lsp.handlers["textDocument/declaration"] = lsputils.declaration
+vim.lsp.handlers["textDocument/typeDefinition"] = lsputils.typeDefinition
+vim.lsp.handlers["textDocument/implementation"] = lsputils.implementation
+vim.lsp.handlers["textDocument/documentSymbol"] = lsputils.document_symbol
+vim.lsp.handlers["workspace/symbol"] = lsputils.workspace_symbol
 
 lspconfig.jsonls.setup { on_attach = on_attach, capabilities = capabilities }
 lspconfig.ts_ls.setup { on_attach = on_attach, capabilities = capabilities }

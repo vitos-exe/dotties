@@ -16,3 +16,9 @@ export PATH="/usr/local/opt/node@22/bin:$PATH"
 # The editor to use.
 export EDITOR=nvim
 
+# No extra info from brew
+export HOMEBREW_NO_ENV_HINTS=false
+
+# uv tool binaries added to the path
+export PATH="/Users/vitalii.chernysh/.local/bin:$PATH"
+
