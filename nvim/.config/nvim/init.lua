@@ -14,9 +14,13 @@ vim.opt.foldlevel = 0
 vim.cmd.colorscheme "vscode"
 
 vim.api.nvim_set_keymap('n', '<leader>w', ':w<CR>', { noremap = true, silent = true })
-vim.api.nvim_set_keymap('n', '<leader>q', ':bp<bar>sp<bar>bn<bar>bd<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<leader>cb', ':bd<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<leader>q', ':q<CR>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<leader><Tab>', ':bnext<CR>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<leader><S-Tab>', ':bprev<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<leader>R', ':luafile $MYVIMRC<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<leader>sh', ':sp<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<leader>sv', ':vsp<CR>', { noremap = true, silent = true })
 
 -- }}}
 
