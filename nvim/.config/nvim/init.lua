@@ -1,3 +1,3 @@
-require("config.lazy")
-require("config.settings")
+require("casablanca.config.lazy")
+require("casablanca.config.settings")
 
