@@ -17,3 +17,6 @@ alias la='ls -A'
 alias lla='ls -lA'
 alias lt='ls --tree'
 
+# No more regular vi
+alias vi='nvim'
+
