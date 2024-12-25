@@ -15,3 +15,5 @@ vim.api.nvim_set_keymap('n', '<leader><S-Tab>', ':bprev<CR>', opts)
 vim.api.nvim_set_keymap('n', '<leader>sh', ':sp<CR>', opts)
 vim.api.nvim_set_keymap('n', '<leader>sv', ':vsp<CR>', opts)
 
+vim.g.copilot_enabled = false
+

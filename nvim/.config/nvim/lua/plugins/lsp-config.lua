@@ -4,7 +4,7 @@ return {
 	config = function()
 		local lspconfig = require('lspconfig')
 		local capabilities = require('blink.cmp').get_lsp_capabilities()
-		local language_servers = { 'jsonls', 'ts_ls', 'pyright', 'angularls', 'cssls', 'html' }
+		local language_servers = { 'jsonls', 'ts_ls', 'pyright', 'angularls', 'cssls', 'html', 'lua_ls' }
 		for _, value in ipairs(language_servers) do
 			lspconfig[value].setup { capabilities = capabilities }
 		end
