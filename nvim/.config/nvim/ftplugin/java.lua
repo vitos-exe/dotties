@@ -22,14 +22,14 @@ local config = {
 
 		-- 💀
 		"-jar",
-		vim.fn.expand "/usr/local/Cellar/jdtls/1.42.0/libexec/plugins/org.eclipse.equinox.launcher_1.6.900.v20240613-2009.jar",
+		vim.fn.expand "~/.local/share/nvim/mason/packages/jdtls/plugins/org.eclipse.equinox.launcher_1.6.900.v20240613-2009.jar",
 		-- ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^                                       ^^^^^^^^^^^^^^
 		-- Must point to the                                                     Change this to
 		-- eclipse.jdt.ls installation                                           the actual version
 
 		-- 💀
 		"-configuration",
-		vim.fn.expand "/usr/local/Cellar/jdtls/1.42.0/libexec/config_mac",
+		vim.fn.expand "~/.local/share/nvim/mason/packages/jdtls/config_mac",
 		-- ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^        ^^^^^^
 		-- Must point to the                      Change to one of `linux`, `win` or `mac`
 		-- eclipse.jdt.ls installation            Depending on your system.
