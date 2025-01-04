@@ -1,9 +1,10 @@
 [general]
 import = [
-	"~/.config/alacritty/current_theme.toml"
+	"./themes/gruvbox_light.toml"
 ]
 
 [window]
+decorations = "None"
 startup_mode = "Maximized"
 option_as_alt = "Both"
 
