@@ -9,7 +9,6 @@ vim.opt.foldlevel = 0
 local opts = { noremap = true, silent = true }
 
 vim.api.nvim_set_keymap('n', '<leader>w', ':w<CR>', opts)
-vim.api.nvim_set_keymap('n', '<leader>cb', ':bd<CR>', opts)
 vim.api.nvim_set_keymap('n', '<leader><Tab>', ':bnext<CR>', opts)
 vim.api.nvim_set_keymap('n', '<leader><S-Tab>', ':bprev<CR>', opts)
 vim.api.nvim_set_keymap('n', '<leader>sh', ':sp<CR>', opts)
