@@ -49,7 +49,13 @@ local config = {
 	-- See https://github.com/eclipse/eclipse.jdt.ls/wiki/Running-the-JAVA-LS-server-from-the-command-line#initialize-request
 	-- for a list of options
 	settings = {
-		java = {},
+		java = {
+			jdt = {
+				ls = {
+					vmargs = "-XX:+UseParallelGC -XX:GCTimeRatio=4 -XX:AdaptiveSizePolicyWeight=90 -Dsun.zip.disableMemoryMapping=true -Xmx4G -Xms100m"
+				}
+			}
+		},
 	},
 
 	-- Language server `initializationOptions`
