@@ -1,6 +1,6 @@
 # Docker aliases.
 alias d=docker
-alias d-c=docker-compose
+alias dc=docker-compose
 
 # Frequently used utility aliases.
 alias c=clear
