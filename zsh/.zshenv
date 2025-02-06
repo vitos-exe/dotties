@@ -25,3 +25,6 @@ export PATH="/Users/vitalii.chernysh/.local/bin:$PATH"
 # Disable light colors for difftastic
 export DFT_BACKGROUND=light
 
+# Make difftastic display whole file during diff
+export DFT_CONTEXT=1000
+

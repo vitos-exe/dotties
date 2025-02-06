@@ -1,0 +1,7 @@
+git:
+  paging:
+    externalDiffCommand: difft --color=always
+
+gui:
+  enlargedSideViewLocation: top
+
