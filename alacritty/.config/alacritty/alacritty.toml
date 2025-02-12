@@ -1,6 +1,6 @@
 [general]
 import = [
-	"./themes/gruvbox_light.toml"
+	"./themes/tokyo_night_day.toml"
 ]
 
 [window]
