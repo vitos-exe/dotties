@@ -2,7 +2,7 @@
 export ZSH_CUSTOM=~/.oh-my-zsh-custom
 
 # Makes tmux start at zsh startup.
-export ZSH_TMUX_AUTOSTART=true
+export ZSH_TMUX_AUTOSTART=false
 
 # The java home directory location. May vary!
 export JAVA_HOME="/Library/Java/JavaVirtualMachines/openjdk-21.jdk/Contents/Home"
@@ -26,5 +26,5 @@ export PATH="/Users/vitalii.chernysh/.local/bin:$PATH"
 export DFT_BACKGROUND=light
 
 # Make difftastic display whole file during diff
-export DFT_CONTEXT=1000
+export DFT_CONTEXT=20
 

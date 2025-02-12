@@ -5,6 +5,7 @@ return {
 		dashboard = { enabled = true },
 		indent = { enabled = true },
 		scroll = { enabled = true },
+		words = { enabled = true }
 	},
 	keys = {
 		{ "<leader>bd",  function() Snacks.bufdelete() end,               desc = "Delete Buffer" },
@@ -14,6 +15,9 @@ return {
 		{ "<leader>gf",  function() Snacks.lazygit.log_file() end,        desc = "Lazygit Current File History" },
 		{ "<leader>gg",  function() Snacks.lazygit() end,                 desc = "Lazygit" },
 		{ "<leader>gl",  function() Snacks.lazygit.log() end,             desc = "Lazygit Log (cwd)" },
+		{ "]]",          function() Snacks.words.jump(vim.v.count1) end,  desc = "Next Reference",              mode = { "n", "t" } },
+		{ "[[",          function() Snacks.words.jump(-vim.v.count1) end, desc = "Prev Reference",              mode = { "n", "t" } },
+
 	},
 	init = function()
 		vim.api.nvim_create_autocmd("User", {
@@ -36,7 +40,7 @@ return {
 				Snacks.toggle.line_number():map("<leader>ul")
 				Snacks.toggle.option("conceallevel",
 					{ off = 0, on = vim.o.conceallevel > 0 and vim.o.conceallevel or 2 }):map(
-				"<leader>uc")
+					"<leader>uc")
 				Snacks.toggle.treesitter():map("<leader>uT")
 				Snacks.toggle.option("background",
 					{ off = "light", on = "dark", name = "Dark Background" }):map("<leader>ub")
