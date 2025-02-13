@@ -10,6 +10,7 @@
 	co = checkout
 	st = status
 	ci = commit
+	rs = restore
 [push]
 	autoSetupRemote = true
 [user]

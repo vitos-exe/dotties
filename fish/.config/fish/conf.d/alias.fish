@@ -19,3 +19,7 @@ alias lt='ls --tree'
 
 # No more regular vi
 alias vi='nvim'
+
+# Git alias
+alias g='git'
+
