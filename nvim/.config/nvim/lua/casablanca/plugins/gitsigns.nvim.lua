@@ -1,3 +1,4 @@
 return {
-    "nvim-lualine/lualine.nvim"
+	"lewis6991/gitsigns.nvim",
+	opts = {}
 }

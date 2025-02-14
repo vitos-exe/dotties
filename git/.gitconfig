@@ -11,6 +11,7 @@
 	st = status
 	ci = commit
 	rs = restore
+	d = diff
 [push]
 	autoSetupRemote = true
 [user]
