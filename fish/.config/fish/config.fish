@@ -5,3 +5,6 @@ set fzf_fd_opts --hidden --no-ignore
 if status is-interactive
     # Commands to run in interactive sessions can go here
 end
+
+# uv
+fish_add_path "/Users/vitalii.chernysh/.local/bin"
