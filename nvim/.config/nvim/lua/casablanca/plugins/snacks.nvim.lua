@@ -4,8 +4,8 @@ return {
 	opts = {
 		dashboard = { enabled = true },
 		indent = { enabled = true },
-		scroll = { enabled = true },
-		words = { enabled = true }
+		words = { enabled = true },
+		explorer = { enabled = true, replace_netrw = true },
 	},
 	keys = {
 		{ "<leader>bd",  function() Snacks.bufdelete() end,               desc = "Delete Buffer" },
@@ -14,7 +14,6 @@ return {
 		{ "<leader>gb",  function() Snacks.git.blame_line() end,          desc = "Git Blame Line" },
 		{ "<leader>gf",  function() Snacks.lazygit.log_file() end,        desc = "Lazygit Current File History" },
 		{ "<leader>gg",  function() Snacks.lazygit() end,                 desc = "Lazygit" },
-		{ "<leader>gl",  function() Snacks.lazygit.log() end,             desc = "Lazygit Log (cwd)" },
 		{ "]]",          function() Snacks.words.jump(vim.v.count1) end,  desc = "Next Reference",              mode = { "n", "t" } },
 		{ "[[",          function() Snacks.words.jump(-vim.v.count1) end, desc = "Prev Reference",              mode = { "n", "t" } },
 

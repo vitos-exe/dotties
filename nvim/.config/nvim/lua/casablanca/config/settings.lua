@@ -20,6 +20,3 @@ vim.keymap.set('n', '<C-J>', '<C-W>j', opts)
 vim.keymap.set('n', '<C-K>', '<C-W>k', opts)
 vim.keymap.set('n', '<C-L>', '<C-W>l', opts)
 
-
-vim.g.copilot_enabled = false
-
