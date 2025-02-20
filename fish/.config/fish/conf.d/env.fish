@@ -8,5 +8,8 @@ export EDITOR=nvim
 export HOMEBREW_NO_ENV_HINTS
 
 # Disable light colors for difftastic
-export DFT_BACKGROUND light
+export DFT_BACKGROUND=light
+
+# difftastic context window
+#export DFT_CONTEXT=1000
 
