@@ -10,7 +10,7 @@ return {
 		},
 		{
 			"<leader>cs",
-			"<cmd>Trouble symbols toggle focus=true<cr>",
+			"<cmd>Trouble symbols toggle focus=true win.size=100<cr>",
 			desc = "Symbols (Trouble)",
 		},
 		{

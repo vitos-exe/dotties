@@ -1,6 +1,7 @@
 # Docker aliases.
 alias d=docker
 alias dc=docker-compose
+alias dpsa="docker ps -a --format 'table {{.ID}}\t{{.Names}}\t{{.Status}}\t{{.Ports}}'"
 
 # Frequently used utility aliases.
 alias c=clear

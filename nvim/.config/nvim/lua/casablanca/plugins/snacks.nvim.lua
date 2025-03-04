@@ -16,8 +16,8 @@ return {
 		{ "<leader>gg",  function() Snacks.lazygit() end,                 desc = "Lazygit" },
 		{ "]]",          function() Snacks.words.jump(vim.v.count1) end,  desc = "Next Reference",              mode = { "n", "t" } },
 		{ "[[",          function() Snacks.words.jump(-vim.v.count1) end, desc = "Prev Reference",              mode = { "n", "t" } },
-		{ "-",           function() Snacks.explorer.open() end,           desc = "Open Explorer",               mode = { "n", "t" } },
-
+		{ "-",           function() Snacks.explorer.open() end,           desc = "Open Explorer", },
+		{ "<leader>t",   function() Snacks.terminal.open() end,           desc = "Open Terminal", },
 	},
 	init = function()
 		vim.api.nvim_create_autocmd("User", {

@@ -9,6 +9,18 @@ return {
 			lspconfig[value].setup { capabilities = capabilities }
 		end
 
+		lspconfig.angularls.setup {
+			capabilities = capabilities,
+			-- on_attach = function()
+			-- 	for i, server in ipairs(vim.lsp.buf_get_clients()) do
+			-- 		print(server.name)
+			-- 		if server.name == 'ts_ls' then
+			-- 			vim.lsp.get_client_by_id(server.id).stop()
+			-- 		end
+			-- 	end
+			-- end
+		}
+
 		lspconfig.lua_ls.setup {
 			on_init = function(client)
 				if client.workspace_folders then

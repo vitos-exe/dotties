@@ -11,7 +11,6 @@ return {
 		},
 		sources = {
 			default = { 'lsp', 'path', 'buffer' },
-			cmdline = {}
 		},
 		completion = {
 			list = {
