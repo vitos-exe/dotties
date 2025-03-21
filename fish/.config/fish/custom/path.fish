@@ -1,6 +1,6 @@
-# uv
-fish_add_path "/Users/vitalii.chernysh/.local/bin"
-
-# Node
-fish_add_path "/usr/local/opt/node@22/bin"
-
+set paths "$HOME/.local/bin" "/usr/local/opt/node@22/bin"
+for p in $paths
+    if test -d $p
+        fish_add_path $p
+    end
+end
