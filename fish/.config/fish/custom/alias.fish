@@ -1,11 +1,11 @@
 # Docker aliases.
-alias d=docker
-alias dc=docker-compose
+alias d="docker"
+alias dc="docker-compose"
 alias dpsa="docker ps -a --format 'table {{.ID}}\t{{.Names}}\t{{.Status}}\t{{.Ports}}'"
 
 # Frequently used utility aliases.
-alias c=clear
-alias e=exit
+alias c="clear"
+alias e="exit"
 
 # Playwright aliases
 alias pw="npx playwright"
@@ -23,4 +23,8 @@ alias vi='nvim'
 
 # Git alias
 alias g='git'
+alias gg='lazygit'
+
+# Python alias
+alias py='python'
 

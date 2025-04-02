@@ -4,22 +4,10 @@ return {
 	config = function()
 		local lspconfig = require('lspconfig')
 		local capabilities = require('blink.cmp').get_lsp_capabilities()
-		local language_servers = { 'jsonls', 'ts_ls', 'pyright', 'angularls', 'cssls', 'html', 'lua_ls' }
+		local language_servers = { 'jsonls', 'ts_ls', 'pyright', 'angularls', 'cssls', 'html', 'lua_ls', 'angularls' }
 		for _, value in ipairs(language_servers) do
 			lspconfig[value].setup { capabilities = capabilities }
 		end
-
-		lspconfig.angularls.setup {
-			capabilities = capabilities,
-			-- on_attach = function()
-			-- 	for i, server in ipairs(vim.lsp.buf_get_clients()) do
-			-- 		print(server.name)
-			-- 		if server.name == 'ts_ls' then
-			-- 			vim.lsp.get_client_by_id(server.id).stop()
-			-- 		end
-			-- 	end
-			-- end
-		}
 
 		lspconfig.lua_ls.setup {
 			on_init = function(client)
@@ -57,10 +45,11 @@ return {
 
 		local opts = { noremap = true, silent = true }
 		vim.keymap.set('n', 'gd', '<cmd>lua vim.lsp.buf.definition()<CR>', opts)
+		vim.keymap.set('n', 'gt', '<cmd>lua vim.lsp.buf.type_definition<CR>', opts)
 		vim.keymap.set('n', 'K', '<cmd>lua vim.lsp.buf.hover()<CR>', opts)
+		vim.keymap.set('n', 'gs', '<cmd>lua vim.lsp.buf.signature_help()<CR>', opts)
 		vim.keymap.set('n', '<leader>rn', '<cmd>lua vim.lsp.buf.rename()<CR>', opts)
 		vim.keymap.set('n', '<leader>ca', '<cmd>lua vim.lsp.buf.code_action()<CR>', opts)
-		-- vim.keymap.set('n', 'gr', '<cmd>lua vim.lsp.buf.references()<CR>', opts)
 		vim.keymap.set('n', '<leader>o', '<cmd>lua vim.lsp.buf.format()<CR>', opts)
 	end
 }
