@@ -1,14 +1,18 @@
 # Java home directory
-export JAVA_HOME="/Library/Java/JavaVirtualMachines/openjdk-21.jdk/Contents/Home"
+set -x JAVA_HOME "/Library/Java/JavaVirtualMachines/openjdk-21.jdk/Contents/Home"
 
 # Default editor
-export EDITOR=nvim
+set -x EDITOR nvim
 
 # Turn off Homebrew hints
-export HOMEBREW_NO_ENV_HINTS=1
+set -x HOMEBREW_NO_ENV_HINTS 1
 
 # Disable light colors for difftastic
-export DFT_BACKGROUND=light
+set -x DFT_BACKGROUND light
 
-export TESTCONTAINERS_RYUK_DISABLED=true
+# Globally disable Ryuk for Testcontainers
+set -x TESTCONTAINERS_RYUK_DISABLED true
+
+# Theme for Neovim
+set -x NVIM_THEME "catppuccin-latte"
 

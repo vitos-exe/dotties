@@ -1,5 +1,10 @@
+local theme_name = 'kanagawa'
+
 return {
 	'rebelot/kanagawa.nvim',
+	cond = function ()
+		return os.getenv('NVIM_THEME') == theme_name
+	end,
 	config = function ()
 		require('kanagawa').setup({
 			colors = {
