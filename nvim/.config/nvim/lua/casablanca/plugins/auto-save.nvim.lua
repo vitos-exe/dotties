@@ -1,6 +1,7 @@
 return {
 	'pocco81/auto-save.nvim',
 	opts = {
+		enabled = false,
 		write_all_buffers = true
 	},
 	config = function ()

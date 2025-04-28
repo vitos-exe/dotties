@@ -1,11 +1,11 @@
 return {
 	"folke/trouble.nvim",
-	opts = {},
+	config = true,
 	cmd = "Trouble",
 	keys = {
 		{
 			"<leader>xx",
-			"<cmd>Trouble diagnostics toggle filter.buf=0<cr>",
+			"<cmd>Trouble diagnostics toggle focus=true filter.buf=0<cr>",
 			desc = "Buffer Diagnostics (Trouble)",
 		},
 		{
