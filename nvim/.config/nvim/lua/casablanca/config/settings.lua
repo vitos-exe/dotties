@@ -25,20 +25,33 @@ local autosave_enabled = false
 local group = vim.api.nvim_create_augroup("AutoSaveGroup", { clear = true })
 
 local function toggle_autosave()
-  if autosave_enabled then
-    vim.api.nvim_clear_autocmds({ group = group })
-    autosave_enabled = false
-    print("Autosave OFF")
-  else
-    vim.api.nvim_create_autocmd({"BufLeave", "FocusLost"}, {
-      group = group,
-      pattern = "*",
-      command = "silent! wa"
-    })
-    autosave_enabled = true
-    print("Autosave ON")
-  end
+	if autosave_enabled then
+		vim.api.nvim_clear_autocmds({ group = group })
+		autosave_enabled = false
+		print("Autosave OFF")
+	else
+		vim.api.nvim_create_autocmd({ "BufLeave", "FocusLost" }, {
+			group = group,
+			pattern = "*",
+			command = "silent! wa"
+		})
+		autosave_enabled = true
+		print("Autosave ON")
+	end
 end
-
 vim.keymap.set('n', '<leader>a', toggle_autosave, { desc = "Toggle autosave" })
+
+-- LSP
+vim.keymap.set('n', '<leader>o', '<cmd>lua vim.lsp.buf.format()<CR>', opts)
+vim.keymap.set('n', 'gd', '<cmd>lua vim.lsp.buf.definition()<CR>', opts)
+vim.keymap.set('n', 'gt', '<cmd>lua vim.lsp.buf.type_definition<CR>', opts)
+vim.lsp.enable({
+	'lua_ls',
+	'pyright',
+	'angularls',
+	'ts_ls',
+	'cssls',
+	'html',
+	'jsonls'
+})
 
