@@ -9,11 +9,6 @@ return {
 			desc = "Buffer Diagnostics (Trouble)",
 		},
 		{
-			"<leader>cs",
-			"<cmd>Trouble symbols toggle focus=true win.size=100<cr>",
-			desc = "Symbols (Trouble)",
-		},
-		{
 			"gr",
 			"<cmd> Trouble lsp_references focus=true<cr>",
 			desc = "LSP references (Trouble)"
