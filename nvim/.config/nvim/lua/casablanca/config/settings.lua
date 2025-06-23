@@ -3,8 +3,9 @@ vim.g.maplocalleader = "\\"
 
 vim.opt.number = true
 vim.opt.wrap = false
-vim.opt.foldmethod = 'marker'
-vim.opt.foldlevel = 0
+vim.opt.foldmethod = "expr"
+vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
+vim.opt.foldlevel = 99
 
 local opts = { noremap = true, silent = true }
 
@@ -45,6 +46,7 @@ vim.keymap.set('n', '<leader>a', toggle_autosave, { desc = "Toggle autosave" })
 vim.keymap.set('n', '<leader>o', '<cmd>lua vim.lsp.buf.format()<CR>', opts)
 vim.keymap.set('n', 'gd', '<cmd>lua vim.lsp.buf.definition()<CR>', opts)
 vim.keymap.set('n', 'gt', '<cmd>lua vim.lsp.buf.type_definition<CR>', opts)
+vim.keymap.set('n', 'rn', '<cmd>lua vim.lsp.buf.type_definition<CR>', opts)
 vim.lsp.enable({
 	'lua_ls',
 	'pyright',
@@ -52,6 +54,17 @@ vim.lsp.enable({
 	'ts_ls',
 	'cssls',
 	'html',
-	'jsonls'
+	'jsonls',
+	'fish_lsp'
 })
 
+-- Delete all buffers except opened ones
+local function delete_hidden_buffers()
+	for _, buf in ipairs(vim.api.nvim_list_bufs()) do
+		if vim.api.nvim_buf_is_loaded(buf) and vim.fn.bufwinnr(buf) == -1 then
+			vim.api.nvim_buf_delete(buf, {})
+		end
+	end
+	print("Hidden buffers deleted")
+end
+vim.keymap.set('n', '<leader>bdh', delete_hidden_buffers, { desc = 'Delete hidden buffers' })

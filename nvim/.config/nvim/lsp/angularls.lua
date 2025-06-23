@@ -1,5 +1,13 @@
 return {
-    cmd = {"ngserver", "--stdio", "--tsProbeLocations", "../..,?/node_modules" , "--ngProbeLocations", "../../@angular/language-server/node_modules,?/node_modules/@angular/language-server/node_modules"},
-    filetypes = { "typescript", "html", "typescriptreact", "typescript.tsx", "htmlangular" },
-    root_markers = { "angular.json", "nx.json" }
+	cmd = {
+		"ngserver",
+		"--stdio",
+		"--tsProbeLocations",
+		"/usr/local/lib/node_modules/typescript/lib",
+		"--ngProbeLocations",
+		"/usr/local/lib/node_modules/@angular/language-server/bin"
+	},
+	filetypes = { "typescript", "html", "typescriptreact", "typescript.tsx", "htmlangular" },
+	root_markers = { "angular.json", "nx.json" }
 }
+
