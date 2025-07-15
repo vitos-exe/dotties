@@ -3,17 +3,24 @@ vim.g.maplocalleader = "\\"
 
 vim.opt.number = true
 vim.opt.wrap = false
-vim.opt.foldmethod = "expr"
-vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
 vim.opt.foldlevel = 99
+
+vim.api.nvim_create_autocmd({ "BufEnter" }, {
+  callback = function()
+    if require("nvim-treesitter.parsers").has_parser() then
+      vim.opt.foldmethod = "expr"
+      vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
+    else
+      vim.opt.foldmethod = "syntax"
+    end
+  end,
+})
 
 local opts = { noremap = true, silent = true }
 
 vim.keymap.set('n', '<leader>w', ':w<CR>', opts)
 vim.keymap.set('n', '<leader><Tab>', ':bnext<CR>', opts)
 vim.keymap.set('n', '<leader><S-Tab>', ':bprev<CR>', opts)
-vim.keymap.set('n', '<leader>sh', ':sp<CR>', opts)
-vim.keymap.set('n', '<leader>sv', ':vsp<CR>', opts)
 
 -- Key mappings for easier window navigation
 vim.keymap.set('n', '<C-H>', '<C-W>h', opts)
@@ -43,10 +50,9 @@ end
 vim.keymap.set('n', '<leader>a', toggle_autosave, { desc = "Toggle autosave" })
 
 -- LSP
-vim.keymap.set('n', '<leader>o', '<cmd>lua vim.lsp.buf.format()<CR>', opts)
+vim.keymap.set('n', 'gro', '<cmd>lua vim.lsp.buf.format()<CR>', opts)
 vim.keymap.set('n', 'gd', '<cmd>lua vim.lsp.buf.definition()<CR>', opts)
-vim.keymap.set('n', 'gt', '<cmd>lua vim.lsp.buf.type_definition<CR>', opts)
-vim.keymap.set('n', 'rn', '<cmd>lua vim.lsp.buf.type_definition<CR>', opts)
+vim.keymap.set('n', 'gt', '<cmd>lua vim.lsp.buf.type_definition()<CR>', opts)
 vim.lsp.enable({
 	'lua_ls',
 	'pyright',

@@ -17,6 +17,6 @@ return {
 		{ "<leader>fp", function() Snacks.picker.projects() end,              desc = "Projects" },
 		{ "<leader>sg", function() Snacks.picker.grep() end,                  desc = "Grep" },
 		{ "<leader>fp", function() Snacks.picker.projects() end,              desc = "Projects" },
-		{ "<leader>sS", function() Snacks.picker.lsp_workspace_symbols() end, desc = "LSP Workspace Symbols" },
+		{ "grs",        function() Snacks.picker.lsp_workspace_symbols() end, desc = "LSP Workspace Symbols" },
 	},
 }

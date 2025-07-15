@@ -1,17 +1,3 @@
-# Sets variables from git-ignored .env file
-set -l filepath $HOME/.config/fish/.env
-for line in (grep -v '^\s*#' $filepath)
-	if test -z $line
-	    continue
-	end
-	# split into key and rest-of-line as value
-	set -l parts (string split -m1 "=" -- $line)
-	set -l key   $parts[1]
-	set -l value $parts[2]
-	set -x $key $value
-end
-
-
 # Java home directory
 set -x JAVA_HOME "/Library/Java/JavaVirtualMachines/openjdk-21.jdk/Contents/Home"
 

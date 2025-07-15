@@ -4,12 +4,12 @@ return {
 	cmd = "Trouble",
 	keys = {
 		{
-			"<leader>xx",
+			"grd",
 			"<cmd>Trouble diagnostics toggle focus=true filter.buf=0<cr>",
 			desc = "Buffer Diagnostics (Trouble)",
 		},
 		{
-			"gr",
+			"grr",
 			"<cmd> Trouble lsp_references focus=true<cr>",
 			desc = "LSP references (Trouble)"
 		}

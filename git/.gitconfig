@@ -14,11 +14,3 @@
 	d = diff
 [push]
 	autoSetupRemote = true
-[user]
-	email = vivich4omega@gmail.com
-	name = Vitalii Chernysh
-[core]
-	editor = nvim
-	autocrlf = input
-[credential]
-	helper = store
