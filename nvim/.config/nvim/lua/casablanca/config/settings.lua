@@ -52,13 +52,6 @@ vim.keymap.set('n', '<leader>a', toggle_autosave, { desc = "Toggle autosave" })
 vim.keymap.set('n', 'gro', '<cmd>lua vim.lsp.buf.format()<CR>', opts)
 vim.keymap.set('n', 'gd', '<cmd>lua vim.lsp.buf.definition()<CR>', opts)
 vim.keymap.set('n', 'gt', '<cmd>lua vim.lsp.buf.type_definition()<CR>', opts)
-vim.lsp.enable({
-	'lua_ls',
-	'angularls',
-	'ts_ls',
-	'html',
-	'cssls'
-})
 
 -- Delete all buffers except opened ones
 local function delete_hidden_buffers()
