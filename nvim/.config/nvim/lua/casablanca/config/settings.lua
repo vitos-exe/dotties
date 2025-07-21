@@ -1,20 +1,19 @@
-vim.g.mapleader = " "
+vim.g.mapleader      = " "
 vim.g.maplocalleader = "\\"
 
-vim.opt.number = true
-vim.opt.wrap = false
-vim.opt.foldlevel = 99
+vim.opt.number       = true
+vim.opt.wrap         = false
+vim.opt.foldlevel    = 99
 
-vim.api.nvim_create_autocmd({ "BufEnter" }, {
-  callback = function()
-    if require("nvim-treesitter.parsers").has_parser() then
-      vim.opt.foldmethod = "expr"
-      vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
-    else
-      vim.opt.foldmethod = "syntax"
-    end
-  end,
-})
+-- For some reason simply settings those options at the startup doesn't work
+-- So here is this keybind that resets folding so it works when I need it
+local function set_treesitter_foldexpr()
+	vim.opt_local.foldmethod = 'expr'
+	vim.opt_local.foldexpr   = 'v:lua.vim.treesitter.foldexpr()'
+	print("Folding method set to Tree-sitter (expr)")
+	vim.cmd("normal! zv") -- Re-evaluate folds immediately
+end
+vim.keymap.set('n', '<Leader>tsf', set_treesitter_foldexpr, { desc = "Set Tree-sitter Folding" })
 
 local opts = { noremap = true, silent = true }
 
@@ -55,13 +54,10 @@ vim.keymap.set('n', 'gd', '<cmd>lua vim.lsp.buf.definition()<CR>', opts)
 vim.keymap.set('n', 'gt', '<cmd>lua vim.lsp.buf.type_definition()<CR>', opts)
 vim.lsp.enable({
 	'lua_ls',
-	'pyright',
 	'angularls',
 	'ts_ls',
-	'cssls',
 	'html',
-	'jsonls',
-	'fish_lsp'
+	'cssls'
 })
 
 -- Delete all buffers except opened ones
