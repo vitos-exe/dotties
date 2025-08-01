@@ -1,23 +1,21 @@
 vim.g.mapleader      = " "
-vim.g.maplocalleader = "\\"
 
 vim.opt.number       = true
 vim.opt.wrap         = false
-vim.opt.foldlevel    = 99
+vim.opt.foldenable   = false
 
 -- For some reason simply settings those options at the startup doesn't work
 -- So here is this keybind that resets folding so it works when I need it
 local function set_treesitter_foldexpr()
 	vim.opt_local.foldmethod = 'expr'
-	vim.opt_local.foldexpr   = 'v:lua.vim.treesitter.foldexpr()'
-	print("Folding method set to Tree-sitter (expr)")
+	vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
 	vim.cmd("normal! zv") -- Re-evaluate folds immediately
+	print("Folding method set to Tree-sitter (expr)")
 end
 vim.keymap.set('n', '<Leader>tsf', set_treesitter_foldexpr, { desc = "Set Tree-sitter Folding" })
 
 local opts = { noremap = true, silent = true }
 
-vim.keymap.set('n', '<leader>w', ':w<CR>', opts)
 vim.keymap.set('n', '<leader><Tab>', ':bnext<CR>', opts)
 vim.keymap.set('n', '<leader><S-Tab>', ':bprev<CR>', opts)
 
@@ -26,6 +24,11 @@ vim.keymap.set('n', '<C-H>', '<C-W>h', opts)
 vim.keymap.set('n', '<C-J>', '<C-W>j', opts)
 vim.keymap.set('n', '<C-K>', '<C-W>k', opts)
 vim.keymap.set('n', '<C-L>', '<C-W>l', opts)
+-- Splits
+vim.keymap.set('n', '<C-S>', '<C-W>s', opts)
+vim.keymap.set('n', '<C-V>', '<C-W>v', opts)
+-- Quit
+vim.keymap.set('n', '<C-Q>', '<C-W>q', opts)
 
 -- Autosave
 local autosave_enabled = false
@@ -49,15 +52,18 @@ end
 vim.keymap.set('n', '<leader>a', toggle_autosave, { desc = "Toggle autosave" })
 
 -- LSP
+vim.keymap.set('n', 'grr', function() Snacks.picker.lsp_references({layout = 'ivy'}) end, opts)
+vim.keymap.set('n', 'grd', function() Snacks.picker.diagnostics_buffer({layout = 'ivy_split'}) end, opts)
 vim.keymap.set('n', 'gro', '<cmd>lua vim.lsp.buf.format()<CR>', opts)
 vim.keymap.set('n', 'gd', '<cmd>lua vim.lsp.buf.definition()<CR>', opts)
 vim.keymap.set('n', 'gt', '<cmd>lua vim.lsp.buf.type_definition()<CR>', opts)
 vim.lsp.enable({
 	'lua_ls',
-	'angularls',
-	'ts_ls',
+	-- 'angularls',
+	'vtsls',
 	'html',
-	'cssls'
+	'cssls',
+	'pyright'
 })
 
 -- Delete all buffers except opened ones
