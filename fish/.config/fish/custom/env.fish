@@ -16,7 +16,11 @@ set -x TESTCONTAINERS_RYUK_DISABLED true
 # Theme for Neovim
 set -x NVIM_THEME "catppuccin-latte"
 
+# Setting colors for LS using vivid color generator
 if type -q vivid
 	set -x LS_COLORS $(vivid generate ayu)
 end
+
+# Bat theme
+set -x BAT_THEME gruvbox-light
 
