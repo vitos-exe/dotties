@@ -54,12 +54,13 @@ vim.keymap.set('n', '<leader>a', toggle_autosave, { desc = "Toggle autosave" })
 -- LSP
 vim.keymap.set('n', 'grr', function() Snacks.picker.lsp_references({layout = 'ivy'}) end, opts)
 vim.keymap.set('n', 'grd', function() Snacks.picker.diagnostics_buffer({layout = 'ivy_split'}) end, opts)
+vim.keymap.set('n', 'grs', function() Snacks.picker.lsp_symbols() end, opts)
 vim.keymap.set('n', 'gro', '<cmd>lua vim.lsp.buf.format()<CR>', opts)
 vim.keymap.set('n', 'gd', '<cmd>lua vim.lsp.buf.definition()<CR>', opts)
-vim.keymap.set('n', 'gt', '<cmd>lua vim.lsp.buf.type_definition()<CR>', opts)
+vim.keymap.set('n', 'gtd', '<cmd>lua vim.lsp.buf.type_definition()<CR>', opts)
 vim.lsp.enable({
 	'lua_ls',
-	-- 'angularls',
+	'angularls',
 	'vtsls',
 	'html',
 	'cssls',
