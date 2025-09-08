@@ -58,15 +58,21 @@
 ---
 --- See `vue_ls` section and https://github.com/vuejs/language-tools/wiki/Neovim for more information.
 
+local function on_attach(client, _)
+	client.server_capabilities.referencesProvider = false
+	-- client.server_capabilities.renameProvider = false
+end
+
 return {
-  cmd = { 'vtsls', '--stdio' },
-  filetypes = {
-    'javascript',
-    'javascriptreact',
-    'javascript.jsx',
-    'typescript',
-    'typescriptreact',
-    'typescript.tsx',
-  },
-  root_markers = { 'tsconfig.json', 'package.json', 'jsconfig.json', '.git' },
+	cmd = { 'vtsls', '--stdio' },
+	filetypes = {
+		'javascript',
+		'javascriptreact',
+		'javascript.jsx',
+		'typescript',
+		'typescriptreact',
+		'typescript.tsx',
+	},
+	root_markers = { 'tsconfig.json', 'package.json', 'jsconfig.json', '.git' },
+	on_attach = on_attach
 }

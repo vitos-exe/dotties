@@ -14,7 +14,8 @@ return {
 	cond = function()
 		local restricted = '/Users/vitalii.chernysh/work'
 		local cwd = vim.fn.getcwd()
-		local not_restricted = cwd:find(restricted) == nil
+		--- How do i parse getenv into boolean value
+		local not_restricted = cwd:find(restricted) == nil or os.getenv('FORCE_ALLOW_COPILOT') == 'true'
 		return not_restricted
 	end
 }
