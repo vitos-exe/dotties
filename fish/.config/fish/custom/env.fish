@@ -14,7 +14,7 @@ set -x DFT_BACKGROUND light
 set -x TESTCONTAINERS_RYUK_DISABLED true
 
 # Theme for Neovim
-set -x NVIM_THEME "catppuccin-latte"
+set -x NVIM_THEME gruvbox-material
 
 # Setting colors for LS using vivid color generator
 if type -q vivid
