@@ -27,3 +27,6 @@ alias gg='lazygit'
 # Python alias
 alias py='python'
 
+# Tmuxinator alias
+alias mux='tmuxinator'
+
