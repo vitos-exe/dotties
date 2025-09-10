@@ -1,0 +1,11 @@
+---
+name: porsche
+project_root: "/Users/vitalii.chernysh/work/porsche/bmt-src"
+windows:
+- lazygit: lazygit
+- iris:
+    layout: even-horizontal
+    panes:
+      - backend: 
+      - frontend: 
+        - cd iris-frontend
