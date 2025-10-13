@@ -10,7 +10,18 @@ return {
 			['<CR>'] = { 'accept', 'fallback' },
 		},
 		sources = {
-			default = { 'lsp', 'path', 'buffer' },
+			default = { 'lsp', 'path', 'buffer', 'snippets' },
+			providers = {
+				snippets = {
+					opts = {
+						friendly_snippets = true,
+						extended_filetypes = {
+							htmlangular = {'angular'},
+							typescript = {'angular'}
+						}
+					}
+				}
+			}
 		},
 		completion = {
 			list = {
