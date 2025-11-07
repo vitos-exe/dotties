@@ -11,6 +11,7 @@ vim.lsp.enable({
 	'ts_ls',
 	'html',
 	'cssls',
-	'pyright'
+	'pyright',
+	'jsonls'
 })
 
