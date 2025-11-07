@@ -47,3 +47,4 @@ macos-titlebar-style=hidden
 confirm-close-surface=false
 maximize=true
 macos-icon=retro
+macos-option-as-alt=left
