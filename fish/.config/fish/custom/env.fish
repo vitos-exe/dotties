@@ -24,3 +24,9 @@ end
 # Bat theme
 set -x BAT_THEME gruvbox-light
 
+# Gemini config
+set -x GEMINI_MODEL gemini-2.5-flash
+
+# Ollama config 
+set -x OLLAMA_CONTEXT_LENGTH $(math 2^17)
+set -x OLLAMA_KEEP_ALIVE 6h
