@@ -7,7 +7,6 @@ vim.keymap.set('n', 'gd', '<cmd>lua vim.lsp.buf.definition()<CR>', opts)
 vim.keymap.set('n', 'F', '<cmd>lua vim.lsp.buf.format()<CR>', opts)
 vim.lsp.enable({
 	'lua_ls',
-	'angularls',
 	'ts_ls',
 	'html',
 	'cssls',
