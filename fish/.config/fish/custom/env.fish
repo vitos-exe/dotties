@@ -1,5 +1,5 @@
 # Java home directory
-set -x JAVA_HOME "/Library/Java/JavaVirtualMachines/openjdk-21.jdk/Contents/Home"
+set -x JAVA_HOME "/Library/Java/JavaVirtualMachines/openjdk.jdk/Contents/Home"
 
 # Default editor
 set -x EDITOR nvim
