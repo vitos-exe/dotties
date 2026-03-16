@@ -12,7 +12,7 @@ alias pw="npx playwright"
 alias pwst="pw show-trace"
 
 # lsd aliases
-alias ls='lsd'
+alias ls='eza'
 alias ll='ls -l'
 alias la='ls -A'
 alias lla='ls -lA'

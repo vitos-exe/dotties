@@ -22,7 +22,7 @@ if type -q vivid
 end
 
 # Bat theme
-set -x BAT_THEME gruvbox-light
+set -x BAT_THEME gruvbox-dark
 
 # Gemini config
 set -x GEMINI_MODEL gemini-2.5-flash
