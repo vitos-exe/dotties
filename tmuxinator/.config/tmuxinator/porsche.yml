@@ -1,11 +1,17 @@
 ---
 name: porsche
 project_root: "/Users/vitalii.chernysh/work/porsche/bmt-src"
+pre_window: set -x COMPOSE_PROFILES dev
+startup_window: util
 windows:
 - lazygit: lazygit
 - iris:
     layout: even-horizontal
     panes:
       - backend: 
+         - dc start
+         - run-iris
       - frontend: 
         - cd iris-frontend
+        - npx ng serve
+- util: null 
