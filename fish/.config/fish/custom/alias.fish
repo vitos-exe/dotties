@@ -6,27 +6,21 @@ alias dpsa="docker ps -a --format 'table {{.ID}}\t{{.Names}}\t{{.Status}}\t{{.Po
 # Frequently used utility aliases.
 alias c="clear"
 alias e="exit"
+alias rm="rm -rf"
 
 # Playwright aliases
 alias pw="npx playwright"
 alias pwst="pw show-trace"
 
-# lsd aliases
+# eza aliases
 alias ls='eza'
 alias ll='ls -l'
 alias la='ls -A'
 alias lla='ls -lA'
 alias lt='ls --tree'
 
-# No more regular vi
 alias vi='nvim'
-
-# Lazygit alias
 alias gg='lazygit'
-
-# Python alias
 alias py='python'
-
-# Tmuxinator alias
 alias mux='tmuxinator'
 
