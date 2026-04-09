@@ -6,11 +6,6 @@
 [diff]
 	external = difft
 	tool = difft
-[alias]
-	co = checkout
-	st = status
-	ci = commit
-	rs = restore
-	d = diff
 [push]
 	autoSetupRemote = true
+
