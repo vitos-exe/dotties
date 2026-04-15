@@ -14,7 +14,7 @@ set -x DFT_BACKGROUND light
 set -x TESTCONTAINERS_RYUK_DISABLED true
 
 # Theme for Neovim
-set -x NVIM_THEME gruvbox-material
+set -x NVIM_THEME kanagawa
 
 # Bat theme
 set -x BAT_THEME gruvbox-dark

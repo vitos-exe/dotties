@@ -21,6 +21,6 @@ alias lt='ls --tree'
 
 alias vi='nvim'
 alias gg='lazygit'
-alias py='python'
+alias py='python3'
 alias mux='tmuxinator'
 
