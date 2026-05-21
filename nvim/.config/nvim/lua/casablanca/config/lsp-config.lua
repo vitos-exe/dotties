@@ -10,8 +10,9 @@ vim.lsp.enable({
 	'ts_ls',
 	'html',
 	'cssls',
-	'pyright',
+	'basedpyright',
 	'jsonls',
-	'docker_language_server'
+	'docker_language_server',
+	'ruff'
 })
 

@@ -7,7 +7,10 @@ local function toggle_autosave()
 	else
 		vim.api.nvim_create_autocmd({ "BufLeave", "FocusLost" }, {
 			pattern = "*",
-			command = "silent! wa"
+			callback = function ()
+				require('conform').format()
+				vim.api.nvim_command("wa")
+			end
 		})
 		autosave_enabled = true
 		print("Autosave ON")
