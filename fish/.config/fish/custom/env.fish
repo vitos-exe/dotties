@@ -22,3 +22,8 @@ set -x BAT_THEME gruvbox-dark
 # Ollama config 
 set -x OLLAMA_CONTEXT_LENGTH $(math 2^17)
 set -x OLLAMA_KEEP_ALIVE 6h
+
+# Gazebo
+set -x GZ_SIM_SYSTEM_PLUGIN_PATH $HOME/scratch/drone/ardupilot_gazebo/build
+set -x GZ_SIM_RESOURCE_PATH $HOME/scratch/drone/ardupilot_gazebo/models:$HOME/scratch/drone/ardupilot_gazebo/worls
+
