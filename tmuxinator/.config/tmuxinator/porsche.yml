@@ -9,10 +9,16 @@ windows:
     panes:
       - backend: 
          - dc start
-         - run-iris
+         - |
+           if read_confirm
+             run-iris
+           end
       - frontend: 
         - cd iris-frontend
-        - npx ng serve
+        - |
+          if read_confirm
+            npx ng serve
+          end
 - util:
     layout: main-vertical
     panes:
