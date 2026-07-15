@@ -1,29 +1,8 @@
-# Java home directory
-set -x JAVA_HOME "/Library/Java/JavaVirtualMachines/openjdk.jdk/Contents/Home"
-
-# Default editor
+set -x NVIM_THEME vscode
 set -x EDITOR nvim
-
-# Turn off Homebrew hints
 set -x HOMEBREW_NO_ENV_HINTS 1
+set -x LS_COLORS ""
 
-# Disable light colors for difftastic
-set -x DFT_BACKGROUND light
-
-# Globally disable Ryuk for Testcontainers
-set -x TESTCONTAINERS_RYUK_DISABLED true
-
-# Theme for Neovim
-set -x NVIM_THEME kanagawa
-
-# Bat theme
-set -x BAT_THEME gruvbox-dark
-
-# Ollama config 
-set -x OLLAMA_CONTEXT_LENGTH $(math 2^17)
-set -x OLLAMA_KEEP_ALIVE 6h
-
-# Gazebo
-set -x GZ_SIM_SYSTEM_PLUGIN_PATH $HOME/scratch/drone/ardupilot_gazebo/build
-set -x GZ_SIM_RESOURCE_PATH $HOME/scratch/drone/ardupilot_gazebo/models:$HOME/scratch/drone/ardupilot_gazebo/worls
+set -x SPOTIPY_CLIENT_ID adda7a13e2d247fb93ebc9f998b03c34
+set -x SPOTIPY_REDIRECT_URI http://127.0.0.1:9900
 
