@@ -7,10 +7,11 @@ vim.keymap.set('n', 'grs', function() Snacks.picker.lsp_symbols() end, opts)
 vim.keymap.set('n', 'gd', '<cmd>lua vim.lsp.buf.definition()<CR>', opts)
 vim.keymap.set('n', 'F', '<cmd>lua vim.lsp.buf.format()<CR>', opts)
 vim.lsp.enable({
+	'angularls',
+	'basedpyright',
+	'cssls',
+	'html',
 	'lua_ls',
 	'ts_ls',
-	'basedpyright',
-	'angularls',
-	'jdtls',
-	'svetle'
+	'jdtls'
 })
