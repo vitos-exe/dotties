@@ -9,3 +9,6 @@
 [push]
 	autoSetupRemote = true
 
+[merge "weave"]
+	name = Entity-level semantic merge
+	driver = /opt/homebrew/bin/weave-driver %O %A %B %L %P
