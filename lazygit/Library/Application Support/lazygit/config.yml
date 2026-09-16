@@ -1,5 +1,6 @@
 git:
-  pagers:
-    - externalDiffCommand: difft --color=always
+  diffRenderers:
+    - command: difft --color=always
+      type: extDiff
 gui:
   enlargedSideViewLocation: top
