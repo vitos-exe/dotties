@@ -1,8 +1,0 @@
----
-name: dotties
-project_root: "/Users/vitalii.chernysh/dotties"
-windows:
-- nvim: cd ~/dotties/nvim/.config/nvim
-- fish: cd ~/dotties/fish/.config/fish 
-- tmux: cd ~/dotties/tmux
-

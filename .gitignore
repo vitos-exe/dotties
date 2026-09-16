@@ -1,19 +1,16 @@
 **/.DS_Store
 
 # nvim
-nvim/.config/nvim/plugin
-nvim/.config/nvim/lazy-lock.json
-
-# zsh
-zsh/.oh-my-zsh-custom/plugins
+home/dot_config/nvim/plugin
+home/dot_config/nvim/lazy-lock.json
 
 # fish
-fish/.config/fish/*
-!fish/.config/fish/config.fish
-!fish/.config/fish/custom
-!fish/.config/fish/fish_plugins
-!fish/.config/fish/fisher-init.fish
+home/dot_config/fish/*
+!home/dot_config/fish/config.fish
+!home/dot_config/fish/custom
+!home/dot_config/fish/fish_plugins
+!home/dot_config/fish/fisher-init.fish
 
-# lazygit 
-lazygit/Library/Application Support/lazygit/state.yml
-
+# lazygit
+home/Library/Application Support/lazygit/state.yml
+home/Library/Application Support/lazygit/github_pull_requests.json
