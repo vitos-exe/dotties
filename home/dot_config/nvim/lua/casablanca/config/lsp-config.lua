@@ -13,5 +13,4 @@ vim.lsp.enable({
 	'html',
 	'lua_ls',
 	'ts_ls',
-	'jdtls'
 })
