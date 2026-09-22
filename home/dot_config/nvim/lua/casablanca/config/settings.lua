@@ -5,6 +5,7 @@ vim.g.mapleader    = " "
 
 vim.opt.number     = true
 vim.opt.wrap       = false
+vim.opt.clipboard  = "unnamed"
 
 vim.opt.foldmethod = "indent"
 vim.opt.foldlevel  = 99
