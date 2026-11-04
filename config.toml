@@ -37,11 +37,11 @@ ruby = "latest"
 "brew:docker-compose" = "latest"
 "brew:ffmpeg" = "latest"
 "brew:weave" = "latest"
-"brew-cask:nikitabobko/tap/aerospace" = "latest"
-"brew-cask:font-hack-nerd-font" = "latest"
-"brew-cask:ghostty@tip" = "latest"
-"brew-cask:spotify" = "latest"
-"brew-cask:ungoogled-chromium" = "latest"
+"brew-cask:nikitabobko/tap/aerospace" = { os = "macos" }
+"brew-cask:font-hack-nerd-font" = { os = "macos" }
+"brew-cask:ghostty@tip" = { os = "macos" }
+"brew-cask:spotify" = { os = "macos" }
+"brew-cask:ungoogled-chromium" = { os = "macos" }
 
 [bootstrap.user]
 login_shell = "zsh"
@@ -57,3 +57,9 @@ zsh = "activate"
 
 [bootstrap.brew.taps]
 "nikitabobko/tap" = "https://github.com/nikitabobko/homebrew-tap.git"
+
+# mise evaluates casks from third-party taps (aerospace) with Ruby 3+, and
+# [tools] are only installed after packages, so install Ruby first.
+[bootstrap.hooks.pre-packages]
+description = "Install Ruby for evaluating third-party Homebrew taps"
+run = 'if [ "$(uname -s)" = Darwin ]; then mise install ruby; fi'
