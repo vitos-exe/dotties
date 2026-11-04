@@ -2,7 +2,7 @@
 # which mise loads automatically on a Mac because miserc.toml sets auto_env.
 
 [settings]
-dotfiles.root = "~/.config/mise/home"
+dotfiles.root = "~/.config/mise/dotfiles"
 
 [dotfiles]
 "~/.config/fish" = {}

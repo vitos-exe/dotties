@@ -1,19 +1,19 @@
 **/.DS_Store
 
 # nvim
-home/.config/nvim/plugin
-home/.config/nvim/lazy-lock.json
+dotfiles/.config/nvim/plugin
+dotfiles/.config/nvim/lazy-lock.json
 
 # fish (plugin-managed files are reinstalled by fisher)
-home/.config/fish/*
-!home/.config/fish/config.fish
-!home/.config/fish/custom
-!home/.config/fish/fish_plugins
-!home/.config/fish/fisher-init.fish
+dotfiles/.config/fish/*
+!dotfiles/.config/fish/config.fish
+!dotfiles/.config/fish/custom
+!dotfiles/.config/fish/fish_plugins
+!dotfiles/.config/fish/fisher-init.fish
 
 # lazygit runtime state
-home/Library/Application Support/lazygit/state.yml
-home/Library/Application Support/lazygit/github_pull_requests.json
+dotfiles/Library/Application Support/lazygit/state.yml
+dotfiles/Library/Application Support/lazygit/github_pull_requests.json
 
 # mise local overrides
 config.local.toml
