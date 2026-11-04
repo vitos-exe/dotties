@@ -1,0 +1,38 @@
+# macOS only. Loaded on top of config.toml when mise runs on a Mac
+# (platform environment, enabled by auto_env in miserc.toml).
+
+# Homebrew's Ruby is keg-only (not linked into /opt/homebrew/bin), so put it on
+# PATH in mise-activated shells to make it the default `ruby`.
+[env]
+_.path = ["/opt/homebrew/opt/ruby/bin"]
+
+[dotfiles]
+"~/.aerospace.toml" = {}
+"~/Library/Application Support/com.mitchellh.ghostty" = {}
+"~/Library/Application Support/lazygit" = {}
+
+[bootstrap.packages]
+"brew:chafa" = "latest"
+"brew:colima" = "latest"
+"brew:difftastic" = "latest"
+"brew:docker" = "latest"
+"brew:docker-buildx" = "latest"
+"brew:docker-compose" = "latest"
+"brew:ffmpeg" = "latest"
+"brew:ruby" = "latest"
+"brew:weave" = "latest"
+"brew-cask:nikitabobko/tap/aerospace" = "latest"
+"brew-cask:font-hack-nerd-font" = "latest"
+"brew-cask:ghostty@tip" = "latest"
+"brew-cask:spotify" = "latest"
+"brew-cask:ungoogled-chromium" = "latest"
+
+[bootstrap.brew.taps]
+"nikitabobko/tap" = "https://github.com/nikitabobko/homebrew-tap.git"
+
+# mise reads casks from third-party taps (aerospace) with Ruby 3+. It ignores
+# Homebrew's keg-only Ruby and [env] PATH for this, but finds a Ruby that mise
+# installed itself, so install one before packages.
+[bootstrap.hooks.pre-packages]
+description = "Install Ruby for reading third-party Homebrew taps"
+run = "mise install ruby@latest"

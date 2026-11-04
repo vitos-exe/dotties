@@ -1,16 +1,15 @@
+# Shared config for every machine. macOS-only parts live in config.macos.toml,
+# which mise loads automatically on a Mac because miserc.toml sets auto_env.
+
 [settings]
 dotfiles.root = "~/.config/mise"
 
 [dotfiles]
-"~/.aerospace.toml" = {}
-"~/.config/alacritty" = {}
 "~/.config/fish" = {}
 "~/.config/nvim" = {}
 "~/.gitconfig" = {}
 "~/.tmux.conf" = {}
 "~/.zshrc" = {}
-"~/Library/Application Support/com.mitchellh.ghostty" = {}
-"~/Library/Application Support/lazygit" = {}
 
 [tools]
 eza = "latest"
@@ -24,24 +23,10 @@ tmux = "latest"
 uv = "latest"
 bat = "latest"
 glow = "latest"
-ruby = "latest"
 
 [bootstrap.packages]
 "apt:zsh" = "latest"
 "apk:zsh" = "latest"
-"brew:chafa" = "latest"
-"brew:colima" = "latest"
-"brew:difftastic" = "latest"
-"brew:docker" = "latest"
-"brew:docker-buildx" = "latest"
-"brew:docker-compose" = "latest"
-"brew:ffmpeg" = "latest"
-"brew:weave" = "latest"
-"brew-cask:nikitabobko/tap/aerospace" = { os = "macos" }
-"brew-cask:font-hack-nerd-font" = { os = "macos" }
-"brew-cask:ghostty@tip" = { os = "macos" }
-"brew-cask:spotify" = { os = "macos" }
-"brew-cask:ungoogled-chromium" = { os = "macos" }
 
 [bootstrap.user]
 login_shell = "zsh"
@@ -54,12 +39,3 @@ zsh = "activate"
 "~/.oh-my-zsh/custom/plugins/forgit" = { url = "https://github.com/wfxr/forgit.git", depth = 1 }
 "~/.oh-my-zsh/custom/plugins/zsh-history-substring-search" = { url = "https://github.com/zsh-users/zsh-history-substring-search", depth = 1 }
 "~/.zsh/pure" = { url = "https://github.com/sindresorhus/pure.git", depth = 1 }
-
-[bootstrap.brew.taps]
-"nikitabobko/tap" = "https://github.com/nikitabobko/homebrew-tap.git"
-
-# mise evaluates casks from third-party taps (aerospace) with Ruby 3+, and
-# [tools] are only installed after packages, so install Ruby first.
-[bootstrap.hooks.pre-packages]
-description = "Install Ruby for evaluating third-party Homebrew taps"
-run = 'if [ "$(uname -s)" = Darwin ]; then mise install ruby; fi'
