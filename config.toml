@@ -6,7 +6,6 @@ dotfiles.root = "~/.config/mise"
 "~/.config/alacritty" = {}
 "~/.config/fish" = {}
 "~/.config/nvim" = {}
-"~/.config/tmuxinator" = {}
 "~/.gitconfig" = {}
 "~/.tmux.conf" = {}
 "~/.zshrc" = {}
