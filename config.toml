@@ -1,0 +1,38 @@
+[settings]
+dotfiles.root = "~/.config/mise"
+
+[dotfiles]
+"~/.aerospace.toml" = {}
+"~/.config/alacritty" = {}
+"~/.config/fish" = {}
+"~/.config/nvim" = {}
+"~/.config/tmuxinator" = {}
+"~/.gitconfig" = {}
+"~/.tmux.conf" = {}
+"~/.zshrc" = {}
+"~/Library/Application Support/com.mitchellh.ghostty" = {}
+"~/Library/Application Support/lazygit" = {}
+
+[tools]
+eza = "latest"
+fzf = "latest"
+ripgrep = "latest"
+lazygit = "latest"
+neovim = "latest"
+
+[bootstrap.packages]
+"apt:zsh" = "latest"
+"apk:zsh" = "latest"
+
+[bootstrap.user]
+login_shell = "zsh"
+
+[bootstrap.mise_shell_activate]
+zsh = "activate"
+
+[bootstrap.repos]
+"~/.oh-my-zsh" = { url = "https://github.com/ohmyzsh/ohmyzsh.git", depth = 1 }
+"~/.oh-my-zsh/custom/plugins/forgit" = { url = "https://github.com/wfxr/forgit.git", depth = 1 }
+"~/.oh-my-zsh/custom/plugins/zsh-history-substring-search" = { url = "https://github.com/zsh-users/zsh-history-substring-search", depth = 1 }
+"~/.zsh/pure" = { url = "https://github.com/sindresorhus/pure.git", depth = 1 }
+
