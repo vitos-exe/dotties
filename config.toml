@@ -10,6 +10,9 @@ dotfiles.root = "~/.config/mise"
 "~/.gitconfig" = {}
 "~/.tmux.conf" = {}
 "~/.zshrc" = {}
+# The activation block in ~/.zprofile calls `mise` by name, so a mise.run
+# install in ~/.local/bin must be on PATH first. zsh reads ~/.zshenv before it.
+"~/.zshenv/local-bin" = { line = 'export PATH="$HOME/.local/bin:$PATH"' }
 
 [tools]
 eza = "latest"
