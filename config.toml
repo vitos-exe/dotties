@@ -2,8 +2,6 @@
 # which mise loads automatically on a Mac because miserc.toml sets auto_env.
 
 [settings]
-# Alpine: use prebuilt musl binaries (node) instead of compiling from source.
-all_compile = false
 dotfiles.root = "~/.config/mise"
 
 [dotfiles]
@@ -12,40 +10,13 @@ dotfiles.root = "~/.config/mise"
 "~/.gitconfig" = {}
 "~/.tmux.conf" = {}
 "~/.zshrc" = {}
-# The activation block in ~/.zprofile calls `mise` by name, so a mise.run
-# install in ~/.local/bin must be on PATH first. This goes at the top of
-# ~/.zprofile, not in ~/.zshenv: on Alpine, /etc/zsh/zprofile sources
-# /etc/profile, which resets PATH after ~/.zshenv has run.
-"~/.zprofile/local-bin" = { line = 'export PATH="$HOME/.local/bin:$PATH"', position = "prepend" }
-
-[tools]
-eza = "latest"
-fzf = "latest"
-ripgrep = "latest"
-lazygit = "latest"
-neovim = "latest"
-gh = "latest"
-node = "latest"
-tmux = "latest"
-uv = "latest"
-bat = "latest"
-glow = "latest"
 
 [bootstrap.packages]
 "apt:zsh" = "latest"
 "apk:zsh" = "latest"
-# Alpine runtime needs: libgcc and libstdc++ for prebuilt node, bash for npm,
-# gcompat to run the glibc builds of eza and ripgrep on musl.
-"apk:bash" = "latest"
-"apk:gcompat" = "latest"
-"apk:libgcc" = "latest"
-"apk:libstdc++" = "latest"
 
 [bootstrap.user]
 login_shell = "zsh"
-
-[bootstrap.mise_shell_activate]
-zsh = "activate"
 
 [bootstrap.repos]
 "~/.oh-my-zsh" = { url = "https://github.com/ohmyzsh/ohmyzsh.git", depth = 1 }
