@@ -12,5 +12,7 @@ Managed with [mise](https://mise.jdx.dev/). This repo is the mise config directo
 ## Applying on a new machine
 
 ```
-mise bootstrap --adopt vitos-exe/dotties
+MISE_AUTO_ENV=true mise bootstrap --adopt vitos-exe/dotties
 ```
+
+Keep `MISE_AUTO_ENV=true` on the first run. mise reads `miserc.toml` (which sets `auto_env`) when it starts, before `--adopt` has cloned this repo, so without the variable the first run skips `config.macos.toml`: no Homebrew packages and no Mac dotfiles. Later runs pick up `miserc.toml` from the clone and don't need it. From mise 2027.6.0 `auto_env` is on by default and the variable is no longer needed.
