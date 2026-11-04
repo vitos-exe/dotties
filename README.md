@@ -10,6 +10,5 @@ Managed with [mise](https://mise.jdx.dev/). This repo is the mise config directo
 ## Applying on a new machine
 
 ```
-git clone git@github.com:vitos-exe/dotfiles.git ~/.config/mise
-mise bootstrap
+mise bootstrap --adopt vitos-exe/dotties
 ```
