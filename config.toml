@@ -57,3 +57,69 @@ zsh = "activate"
 
 [bootstrap.brew.taps]
 "nikitabobko/tap" = "https://github.com/nikitabobko/homebrew-tap.git"
+
+# ---------------------------------------------------------------- macOS
+# Only preferences that are explicitly set on this Mac. mise doesn't restart
+# apps: run `killall Dock Finder SystemUIServer` after a first apply.
+
+[bootstrap.macos.dock]
+autohide = true
+
+[bootstrap.macos.finder]
+preferred_view_style = "list"
+
+[bootstrap.macos.keyboard]
+automatic_capitalization = true
+fn_state = false
+
+[bootstrap.macos.trackpad]
+three_finger_drag = false
+
+[bootstrap.macos.defaults."com.apple.dock"]
+tilesize = 58.0
+wvous-br-corner = 14 # bottom-right hot corner: Quick Note
+
+[bootstrap.macos.defaults."com.apple.finder"]
+FXDefaultSearchScope = "SCsp" # search the current folder
+NewWindowTarget = "PfAF"      # new windows open Recents
+ShowExternalHardDrivesOnDesktop = true
+ShowHardDrivesOnDesktop = false
+ShowRemovableMediaOnDesktop = true
+
+[bootstrap.macos.defaults.NSGlobalDomain]
+AppleInterfaceStyleSwitchesAutomatically = true # light/dark follows time of day
+AppleKeyboardUIMode = 0
+AppleLanguages = ["en-NL"]
+AppleLocale = "en_NL"
+AppleShowAllExtensions = true
+AppleShowScrollBars = "Automatic"
+ApplePressAndHoldEnabled = "0" # stored as a string; off = key repeat instead of accent popup
+InitialKeyRepeat = 15.0
+KeyRepeat = 2.0
+NSAutomaticPeriodSubstitutionEnabled = true
+
+[bootstrap.macos.defaults."com.apple.AppleMultitouchTrackpad"]
+Clicking = 0 # tap to click off
+FirstClickThreshold = 1
+TrackpadCornerSecondaryClick = 0
+TrackpadFourFingerHorizSwipeGesture = 2
+TrackpadFourFingerVertSwipeGesture = 2
+TrackpadPinch = 1
+TrackpadRightClick = true
+TrackpadRotate = 1
+TrackpadThreeFingerHorizSwipeGesture = 2
+TrackpadThreeFingerVertSwipeGesture = 2
+TrackpadTwoFingerFromRightEdgeSwipeGesture = 3
+
+[bootstrap.macos.defaults."com.apple.driver.AppleBluetoothMultitouch.trackpad"]
+Clicking = 0
+
+[bootstrap.macos.defaults."com.apple.WindowManager"]
+GloballyEnabled = false # Stage Manager off
+EnableTiledWindowMargins = false
+EnableTilingByEdgeDrag = false
+EnableTopTilingByEdgeDrag = false
+HideDesktop = true
+
+[bootstrap.macos.defaults."com.apple.ActivityMonitor"]
+ShowCategory = 102
