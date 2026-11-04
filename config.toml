@@ -25,6 +25,7 @@ tmux = "latest"
 uv = "latest"
 bat = "latest"
 glow = "latest"
+ruby = "latest"
 
 [bootstrap.packages]
 "apt:zsh" = "latest"
@@ -54,3 +55,6 @@ zsh = "activate"
 "~/.oh-my-zsh/custom/plugins/forgit" = { url = "https://github.com/wfxr/forgit.git", depth = 1 }
 "~/.oh-my-zsh/custom/plugins/zsh-history-substring-search" = { url = "https://github.com/zsh-users/zsh-history-substring-search", depth = 1 }
 "~/.zsh/pure" = { url = "https://github.com/sindresorhus/pure.git", depth = 1 }
+
+[bootstrap.brew.taps]
+"nikitabobko/tap" = "https://github.com/nikitabobko/homebrew-tap.git"
