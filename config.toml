@@ -19,10 +19,29 @@ fzf = "latest"
 ripgrep = "latest"
 lazygit = "latest"
 neovim = "latest"
+gh = "latest"
+node = "latest"
+tmux = "latest"
+uv = "latest"
+bat = "latest"
+glow = "latest"
 
 [bootstrap.packages]
 "apt:zsh" = "latest"
 "apk:zsh" = "latest"
+"brew:chafa" = "latest"
+"brew:colima" = "latest"
+"brew:difftastic" = "latest"
+"brew:docker" = "latest"
+"brew:docker-buildx" = "latest"
+"brew:docker-compose" = "latest"
+"brew:ffmpeg" = "latest"
+"brew:weave" = "latest"
+"brew-cask:nikitabobko/tap/aerospace" = "latest"
+"brew-cask:font-hack-nerd-font" = "latest"
+"brew-cask:ghostty@tip" = "latest"
+"brew-cask:spotify" = "latest"
+"brew-cask:ungoogled-chromium" = "latest"
 
 [bootstrap.user]
 login_shell = "zsh"
@@ -35,4 +54,3 @@ zsh = "activate"
 "~/.oh-my-zsh/custom/plugins/forgit" = { url = "https://github.com/wfxr/forgit.git", depth = 1 }
 "~/.oh-my-zsh/custom/plugins/zsh-history-substring-search" = { url = "https://github.com/zsh-users/zsh-history-substring-search", depth = 1 }
 "~/.zsh/pure" = { url = "https://github.com/sindresorhus/pure.git", depth = 1 }
-
